@@ -1,3 +1,6 @@
+Lehrer ranking · HTML
+Kopieren
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -10,9 +13,9 @@
 <title>Lehrer Ranking</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap');
-
+ 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-
+ 
 :root {
   --bg:        #fdf6ee;
   --card:      #ffffff;
@@ -28,7 +31,7 @@
   --safe-top:    env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
-
+ 
 html, body {
   width: 100%; height: 100%;
   overflow: hidden;
@@ -37,7 +40,7 @@ html, body {
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
-
+ 
 #app {
   width: 100%; height: 100%;
   display: flex;
@@ -45,7 +48,7 @@ html, body {
   overflow: hidden;
   position: relative;
 }
-
+ 
 #video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -62,7 +65,7 @@ html, body {
   z-index: 1;
   pointer-events: none;
 }
-
+ 
 /* ── Hero ── */
 #hero {
   flex-shrink: 0;
@@ -72,7 +75,7 @@ html, body {
   background: linear-gradient(150deg, var(--hero-from) 0%, var(--hero-to) 100%);
   border-bottom: 1px solid var(--border);
 }
-
+ 
 /* decorative circles */
 #hero::before {
   content: '';
@@ -92,7 +95,7 @@ html, body {
   background: rgba(245,200,122,0.12);
   pointer-events: none;
 }
-
+ 
 .hero-inner {
   display: flex;
   align-items: center;
@@ -100,7 +103,7 @@ html, body {
   position: relative;
   z-index: 1;
 }
-
+ 
 .school-logo {
   width: 58px; height: 58px;
   border-radius: 14px;
@@ -115,7 +118,7 @@ html, body {
   padding: 4px;
 }
 .school-logo svg { width: 30px; height: 30px; }
-
+ 
 .hero-text { flex: 1; min-width: 0; }
 .hero-title {
   font-family: 'Playfair Display', serif;
@@ -132,9 +135,9 @@ html, body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-
+ 
 .hero-btns { display: flex; gap: 6px; flex-shrink: 0; }
-
+ 
 .hbtn {
   height: 34px;
   padding: 0 11px;
@@ -154,7 +157,7 @@ html, body {
 }
 .hbtn:active { background: var(--hero-from); }
 .hbtn.cam-active { background: var(--accent); color: white; border-color: var(--accent); }
-
+ 
 /* ── Progress ── */
 #progress-wrap {
   flex-shrink: 0;
@@ -178,7 +181,7 @@ html, body {
   font-size: 11px; color: var(--text3);
   font-weight: 700; white-space: nowrap;
 }
-
+ 
 /* ── Content ── */
 #content {
   flex: 1;
@@ -189,7 +192,7 @@ html, body {
   padding: 8px 12px calc(var(--safe-bottom) + 10px);
   position: relative; z-index: 2;
 }
-
+ 
 /* ── Pool ── */
 #pool-wrap {
   width: 104px;
@@ -202,14 +205,14 @@ html, body {
   scrollbar-width: none;
 }
 #pool-wrap::-webkit-scrollbar { display: none; }
-
+ 
 .pool-label {
   font-size: 10px; color: var(--text3);
   text-align: center; text-transform: uppercase;
   letter-spacing: 0.1em; font-weight: 700;
   margin-bottom: 2px; flex-shrink: 0;
 }
-
+ 
 .icon-card {
   width: 100px; height: 54px;
   border-radius: 14px;
@@ -228,7 +231,7 @@ html, body {
   font-size: 11.5px; color: var(--text);
   font-weight: 700; line-height: 1.25;
 }
-
+ 
 /* ── Ranking ── */
 #ranking-wrap {
   flex: 1;
@@ -238,12 +241,12 @@ html, body {
   scrollbar-width: none; min-height: 0;
 }
 #ranking-wrap::-webkit-scrollbar { display: none; }
-
+ 
 .rank-row {
   display: flex; align-items: center;
   gap: 7px; flex-shrink: 0; height: 50px;
 }
-
+ 
 .rank-num {
   font-family: 'Playfair Display', serif;
   font-size: 20px; font-weight: 700;
@@ -251,7 +254,7 @@ html, body {
   text-align: right; flex-shrink: 0; line-height: 1;
 }
 .rank-num.top3 { color: var(--accent); }
-
+ 
 .rank-slot {
   flex: 1; height: 48px;
   border-radius: 14px;
@@ -276,16 +279,16 @@ html, body {
 .rank-slot.gold   { border-color:#e6b84a; background:#fffbf0; box-shadow:0 1px 8px rgba(230,184,74,0.2); }
 .rank-slot.silver { border-color:#b0b8c4; background:#f8f9fb; box-shadow:0 1px 8px rgba(160,170,185,0.15); }
 .rank-slot.bronze { border-color:#d4956a; background:#fdf5ef; box-shadow:0 1px 8px rgba(212,149,106,0.15); }
-
+ 
 .slot-name { font-size: 14px; color: var(--text); font-weight: 700; line-height: 1.3; }
 .medal { font-size: 17px; margin-left: auto; }
-
+ 
 .av {
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-weight: 800; flex-shrink: 0;
 }
-
+ 
 /* ── Float ── */
 #float {
   position: fixed; pointer-events: none; z-index: 9999;
@@ -305,7 +308,7 @@ html, body {
 <div id="app">
   <video id="video" autoplay muted playsinline></video>
   <div id="cam-overlay"></div>
-
+ 
   <div id="hero">
     <div class="hero-inner">
       <div class="school-logo">
@@ -327,22 +330,22 @@ html, body {
       </div>
     </div>
   </div>
-
+ 
   <div id="progress-wrap">
     <div id="progress-bar-bg"><div id="progress-bar-fill"></div></div>
     <div id="progress-label">0 / 10</div>
   </div>
-
+ 
   <div id="content">
     <div id="pool-wrap">
       <div class="pool-label">Lehrkräfte</div>
     </div>
     <div id="ranking-wrap"></div>
   </div>
-
+ 
   <div id="float"></div>
 </div>
-
+ 
 <script>
 const teachers = [
   { id:'lappy',    label:'Fr. Lappy',    initials:'LA', color:'#c45a80', bg:'#fde8f0' },
@@ -356,21 +359,83 @@ const teachers = [
   { id:'weiss',    label:'Fr. Weiß',     initials:'WE', color:'#507080', bg:'#e8f3f8' },
   { id:'spross',   label:'Fr. Sproß',    initials:'SP', color:'#b05828', bg:'#fdeede' },
 ];
-
+ 
 const medals = ['🥇','🥈','🥉'];
 const medalClass = ['gold','silver','bronze'];
 const ranking = new Array(10).fill(null);
 let dragId = null, dragFrom = null, offX = 0, offY = 0;
 const floatEl = document.getElementById('float');
-
+ 
 function getT(id) { return teachers.find(x => x.id === id); }
-
+ 
+let confettiActive = false;
+let confettiFrame = null;
+ 
+function launchConfetti() {
+  if (confettiActive) return;
+  confettiActive = true;
+  const canvas = document.createElement('canvas');
+  canvas.id = 'confetti-canvas';
+  canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:8888;';
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const colors = ['#e8845a','#f5c87a','#7ec8a4','#f48fb1','#90caf9','#ce93d8','#a5d6a7','#fff176','#ffab91','#80cbc4'];
+  const pieces = [];
+  for (let i = 0; i < 130; i++) {
+    pieces.push({
+      x: Math.random() * canvas.width,
+      y: -20 - Math.random() * 200,
+      w: 8 + Math.random() * 8,
+      h: 5 + Math.random() * 5,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rot: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.15,
+      vx: (Math.random() - 0.5) * 3,
+      vy: 2 + Math.random() * 4,
+      opacity: 1
+    });
+  }
+  let tick = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+    pieces.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.rot += p.rotSpeed;
+      if (tick > 100) p.opacity -= 0.013;
+      if (p.opacity > 0 && p.y < canvas.height + 30) {
+        alive = true;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.opacity);
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+        ctx.restore();
+      }
+    });
+    tick++;
+    if (alive) { confettiFrame = requestAnimationFrame(draw); }
+    else { canvas.remove(); confettiActive = false; }
+  }
+  confettiFrame = requestAnimationFrame(draw);
+}
+ 
+function stopConfetti() {
+  if (confettiFrame) cancelAnimationFrame(confettiFrame);
+  const c = document.getElementById('confetti-canvas');
+  if (c) c.remove();
+  confettiActive = false;
+}
+ 
 function updateProgress() {
   const n = ranking.filter(Boolean).length;
   document.getElementById('progress-bar-fill').style.width = (n*10) + '%';
   document.getElementById('progress-label').textContent = n + ' / 10';
+  if (ranking[0] && ranking[1] && ranking[2]) launchConfetti();
 }
-
+ 
 const poolWrap = document.getElementById('pool-wrap');
 teachers.forEach(t => {
   const el = document.createElement('div');
@@ -381,7 +446,7 @@ teachers.forEach(t => {
   poolWrap.appendChild(el);
   bindDrag(el, null);
 });
-
+ 
 const rankWrap = document.getElementById('ranking-wrap');
 for (let i = 0; i < 10; i++) {
   const row = document.createElement('div');
@@ -396,7 +461,7 @@ for (let i = 0; i < 10; i++) {
   row.appendChild(slot);
   rankWrap.appendChild(row);
 }
-
+ 
 function renderSlot(idx, id) {
   const slot = document.getElementById('slot-' + idx);
   slot.innerHTML = '';
@@ -428,10 +493,10 @@ function renderSlot(idx, id) {
   }
   updateProgress();
 }
-
+ 
 function updatePool(id) { const e = document.getElementById('pool-'+id); if(e) e.classList.add('placed'); }
 function freePool(id)   { const e = document.getElementById('pool-'+id); if(e) e.classList.remove('placed'); }
-
+ 
 function place(id, toIdx, fromSlot) {
   const displaced = ranking[toIdx];
   if (fromSlot !== null) {
@@ -444,18 +509,19 @@ function place(id, toIdx, fromSlot) {
   renderSlot(toIdx, id);
   updatePool(id);
 }
-
+ 
 function reset() {
+  stopConfetti();
   ranking.fill(null);
   for (let i = 0; i < 10; i++) renderSlot(i, null);
   teachers.forEach(t => freePool(t.id));
 }
-
+ 
 function bindDrag(el, slotIdx) {
   el.addEventListener('mousedown', e => startDrag(e, el, slotIdx));
   el.addEventListener('touchstart', e => startDrag(e, el, slotIdx), { passive: false });
 }
-
+ 
 function startDrag(e, el, slotIdx) {
   const id = el.dataset.id;
   if (!id) return;
@@ -475,12 +541,12 @@ function startDrag(e, el, slotIdx) {
   document.addEventListener('touchend', onUp);
   e.preventDefault();
 }
-
+ 
 function moveFloat(cx, cy) {
   floatEl.style.left = (cx - offX) + 'px';
   floatEl.style.top  = (cy - offY) + 'px';
 }
-
+ 
 function onMove(e) {
   const cx = e.touches ? e.touches[0].clientX : e.clientX;
   const cy = e.touches ? e.touches[0].clientY : e.clientY;
@@ -490,7 +556,7 @@ function onMove(e) {
   if (t) t.classList.add('drag-over');
   e.preventDefault();
 }
-
+ 
 function onUp(e) {
   const cx = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
   const cy = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
@@ -513,7 +579,7 @@ function onUp(e) {
   document.removeEventListener('touchmove', onMove);
   document.removeEventListener('touchend', onUp);
 }
-
+ 
 function slotAt(cx, cy) {
   for (const s of document.querySelectorAll('.rank-slot')) {
     const r = s.getBoundingClientRect();
@@ -521,7 +587,7 @@ function slotAt(cx, cy) {
   }
   return null;
 }
-
+ 
 let camOn = false;
 document.getElementById('cam-btn').onclick = async function() {
   const video = document.getElementById('video');
@@ -546,7 +612,7 @@ document.getElementById('cam-btn').onclick = async function() {
     camOn = false;
   }
 };
-
+ 
 document.getElementById('reset-btn').onclick = reset;
 updateProgress();
 </script>
